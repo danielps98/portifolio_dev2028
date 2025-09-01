@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiências Daniel</title>
+  <link rel="icon" href="uploads/header.png" type="image/x-icon">
+<script src="./javascript/script.js"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./css/css/css/style.css">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!---js-->
+
+  <!-- Estilo Customizado -->
+
+</head>
+
+<body id="page-top">
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top style="background-color:#3b82f6>
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="navbar-text">Experiências</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+        Menu <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto text-uppercase">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#home">Inicial</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre_mim</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#testimonials">Redes-sociais</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER / TOPO -->
+<!-- BANNER / TOPO -->
+  <section id="home" class="main-banner">
+    <div id="particles-js"></div>
+    <div class="container text-center">
+      <!-- Nome com efeito -->
+      <h1 class="animated-name">Daniel Pereira da Silva</h1>
+
+      <!-- Título com animação -->
+      <div class="container text-center my-5">
+        <div class="animated-title d-flex justify-content-center align-items-center gap-2">
+          <span class="left-part">Análise e</span>
+          <span class="center-dot">Desenvolvimento</span>
+          <span class="right-part">de Sistemas</span>
+        </div>
+      </div>
+
+      <!-- Tech Icons -->
+      <div class="tech-icons text-center mt-3">
+        <i class="fab fa-html5 text-danger fa-2x mx-2"></i>
+        <i class="fab fa-css3-alt text-primary fa-2x mx-2"></i>
+        <i class="fab fa-js text-warning fa-2x mx-2"></i>
+        <i class="fab fa-bootstrap text-info fa-2x mx-2"></i>
+        <i class="fab fa-python text-success fa-2x mx-2"></i>
+        <i class="fab fa-microsoft fa-2x mx-2" style="color:#0078D7"></i>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Sobre Mim -->
+<div id="about" class="section wb">
+  <div class="container">
+<!--  -->    <div class="row">
+      <!-- Coluna esquerda: Sobre Mim -->
+      <div class="col-md-6">
+        <div class="message-box">
+          <h2><i class="fas fa-user"></i> Sobre Mim</h2>
+          
+          <!-- Resumo inicial -->
+          <p id="about-summary">
+            Olá! Meu nome é <strong>Daniel Pereira da Silva</strong> e sou apaixonado por tecnologia.  
+            Atualmente, estudo na <strong>Faculdade Impacta</strong> O curso <strong>Análise e Desenvolvimento de Sistemas</strong> na Impacta, com foco em <strong>Fullstack</strong>.  
+            Minha missão é criar <strong>soluções digitais inteligentes</strong> e explorar novas tecnologias nas áreas de <strong>Cibersegurança, Nuvem e Desenvolvimento Fullstack</strong>.
+          </p>
+
+          <!-- Texto completo escondido via checkbox -->
+          <input type="checkbox" id="read-more-toggle" style="display:none;">
+          <p id="about-full">
+            Ao longo da minha trajetória, já estudei e continuo me aprofundando em:  
+            <strong>HTML5, CSS3, JavaScript, Bootstrap, Python, SQL, ASP.NET MVC, Microsoft Azure</strong>, além de <strong>Segurança da Informação</strong> e <strong>Engenharia de Prompting</strong>.  
+            <br><br>
+            Meu foco é unir essas três áreas: <strong>Cibersegurança</strong> para proteger sistemas e dados, <strong>Nuvem</strong> para criar aplicações escaláveis e seguras, e <strong>Desenvolvimento Fullstack</strong> para construir soluções digitais eficientes e inovadoras.  
+            <br><br>
+            Sou movido pela curiosidade e vontade de impactar o mundo com tecnologia, sempre explorando novas ferramentas e projetos que desafiam minha criatividade.  
+            Busco transformar teoria em prática, aplicando conhecimentos em projetos pessoais e colaborativos para aprimorar habilidades e gerar resultados reais.
+          </p>
+
+          <!-- Botão Leia mais via label -->
+          <label for="read-more-toggle" class="btn btn-outline-primary mt-2" id="read-more-btn">Leia mais</label>
+
+          <br>
+          <a href="https://docs.google.com/document/d/1p9P1iAJMbjKZsUDxgb9LY2cM-sYxrgZAS0TTHNXwUOU/edit?usp=sharing"
+             target="_blank" class="btn btn-primary mt-2">Download CV</a>
+        </div>
+      </div>
+
+      <!-- Coluna direita: Foto com efeito de giro via CSS -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="right-box-pro text-center">
+          <div class="profile-img-container">
+            <img id="profile-img" src="uploads/fotoperfil.png" alt="Daniel Pereira da Silva" class="img-fluid img-rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- HABILIDADES -->
+  <div id="services" class="section wb">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Habilidades</h2>
+        <p>Minhas principais competências tecnológicas</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-html5 fa-3x text-danger mb-3"></i>
+            <h4>HTML</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-css3-alt fa-3x text-primary mb-3"></i>
+            <h4>CSS</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-bootstrap fa-3x text-info mb-3"></i>
+            <h4>Bootstrap</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-python fa-3x text-success mb-3"></i>
+            <h4>Python</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fas fa-database fa-3x text-warning mb-3"></i>
+            <h4>SQL</h4> 
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fab fa-microsoft fa-3x text-primary mb-3"></i>
+            <h4>Microsoft Azure</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+            <h4>Segurança da Informação</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fas fa-robot fa-3x text-secondary mb-3"></i>
+            <h4>Engenharia de Prompting</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projetos com Dashboard -->
+  <div id="portfolio" class="section lb">
+    <div class="container">
+      <div class="section-title text-left">
+        <h3><i class="fas fa-folder-open"></i> Projetos & Dashboard</h3>
+        <p>Projetos interativos com métricas animadas</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h5>Front-end</h5>
+            <canvas id="chart1" class="chart-container"></canvas>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h5>Back-end</h5>
+            <canvas id="chart2" class="chart-container"></canvas>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h5>DevOps & Azure</h5>
+            <canvas id="chart3" class="chart-container"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projetos & Dashboard -->
+<!-- DASHBOARD -->
+<section id="dashboard" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">📊 Dashboard</h2>
+    <p class="text-center mb-5">Visualize alguns dados e métricas interativas:</p>
+
+    <div class="row">
+      <!-- Gráfico de Habilidades -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm p-3">
+          <h5 class="text-center">Habilidades</h5>
+          <canvas id="skillsChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico de Projetos -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm p-3">
+          <h5 class="text-center">Projetos Finalizados</h5>
+          <canvas id="projectsChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chart.js -->
+
+
+
+
+      <div class="row mt-3">
+        <div class="col-md-12 text-center">
+          <div class="legend">
+            <span><i class="fas fa-square" style="color:red"></i> HTML</span>
+            <span><i class="fas fa-square" style="color:blue"></i> CSS</span>
+            <span><i class="fas fa-square" style="color:yellow"></i> JavaScript</span>
+            <span><i class="fas fa-square" style="color:purple"></i> Bootstrap</span>
+            <span><i class="fas fa-square" style="color:green"></i> Python</span>
+            <span><i class="fas fa-square" style="color:orange"></i> SQL</span>
+            <span><i class="fas fa-square" style="color:cyan"></i> Azure</span>
+            <span><i class="fas fa-square" style="color:pink"></i> Segurança</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Footer Redes Sociais -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+      <h4>Conecte-se Comigo</h4>
+      <a href="https://www.instagram.com/dael_p1reira/" target="_blank"><i class="fab fa-instagram fa-2x mx-2" style="color:#E4405F;"></i></a>
+      <a href="https://wa.me/11980311529" target="_blank"><i class="fab fa-whatsapp fa-2x mx-2" style="color:#25D366;"></i></a>
+      <a href="https://github.com/danielps98" target="_blank"><i class="fab fa-github fa-2x mx-2" style="color:#fff;"></i></a>
+      <p class="mt-3">&copy; 2024 Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="./js/scrips.js">
+<!-- Biblioteca Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Biblioteca Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- Seu script principal -->
+<script src="script.js"></script>
+<!-- Biblioteca Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Seu script central -->
+<script src="./js/scrips.js"></script>
+<script src="./javascript/script.js"></script>
+</body>
+</html>
