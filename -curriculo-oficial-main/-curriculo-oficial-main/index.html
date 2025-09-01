@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiências Daniel</title>
+  <link rel="icon" href="uploads/header.png" type="image/x-icon">
+
+   <link rel="stylesheet" href="./css/organizacao.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./css/organizacao.css">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Estilo Customizado -->
+  <style>
+    /* ======== TOPO / BANNER ======== */
+    body {
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+      background: #f0f0f0;
+    }
+
+    .main-banner {
+      position: relative;
+      overflow: hidden;
+      padding: 150px 0;
+      color: #cc0303;
+background: linear-gradient(to right, #2a3d66, #00d4ffcc);
+      text-align: center;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .main-banner .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-banner h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .main-banner p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .cd-headline b {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin: 0 5px;
+    }
+
+    /* ======== SOBRE MIM ======== */
+    #about {
+  background: linear-gradient(to right, #5aa7ff30, #173f7a1f);
+      padding: 80px 0;
+    }
+
+    #about .message-box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    #about .message-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    #about .right-box-pro img {
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+    }
+
+    #about .right-box-pro img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Botão */
+    .btn-hover-new {
+      position: relative;
+      display: inline-block;
+      padding: 12px 30px;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      border-radius: 50px;
+      transition: 0.3s;
+      background: linear-gradient(45deg, #f2de03, #e27304);
+    }
+
+    .btn-hover-new:hover {
+      background: linear-gradient(45deg, #e27304, #f2de03);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+    }
+
+    /* ======== HABILIDADES ======== */
+    #services {
+      background: #f0f0f0;
+      padding: 80px 0;
+    }
+
+    #services .services-inner-box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    #services .services-inner-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ======== PORTFOLIO / DASHBOARD ======== */
+    #portfolio {
+      background: #e6e6e6;
+      padding: 80px 0;
+    }
+
+    .gallery-single {
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-single:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .dashboard-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 250px;
+    }
+
+    footer {
+      background: #343a40;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    footer a {
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #f2de03;
+
+      .navbar-nav .nav-link {
+  color: #ffffff; /* cor inicial dos links */
+  transition: 0.3s;
+}
+
+.n.animated-title span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+}
+
+/* Movimento contínuo da esquerda para o centro */
+@keyframes moveLeft {
+  0% { transform: translateX(-100vw); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-10px); opacity: 1; }
+}
+
+/* Movimento contínuo da direita para o centro */
+@keyframes moveRight {
+  0% { transform: translateX(100vw); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(10px); opacity: 1; }
+}
+
+/* Pulsando o ponto central */
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); color: #ffdd00; }
+  50% { transform: scale(1.5); color: #00d4ff; }
+}
+
+/* Aplicando animações */
+.left-part {
+  animation: moveLeft 3s ease-in-out infinite alternate;
+}
+
+.right-part {
+  animation: moveRight 3s ease-in-out infinite alternate;
+}
+
+.center-dot {
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+/* Nome piscando / fade in-out */
+.animated-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(-20px); }
+  50% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animação do título dividido (como já conversamos antes) */
+.animated-title span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(-100vw); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-10px); opacity: 1; }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(100vw); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(10px); opacity: 1; }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); color: #ffdd00; }
+  50% { transform: scale(1.5); color: #00d4ff; }
+}
+
+.left-part {
+  animation: moveLeft 3s ease-in-out infinite alternate;
+}
+
+.right-part {
+  animation: moveRight 3s ease-in-out infinite alternate;
+}
+
+.center-dot {
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top style="background-color:#3b82f6>
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="navbar-text">Experiências</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+        Menu <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto text-uppercase">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#home">Inicial</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre_mim</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#testimonials">Redes-sociais</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER / TOPO -->
+<!-- BANNER / TOPO -->
+  <section id="home" class="main-banner">
+    <div id="particles-js"></div>
+    <div class="container text-center">
+      <!-- Nome com efeito -->
+      <h1 class="animated-name">Daniel Pereira da Silva</h1>
+
+      <!-- Título com animação -->
+      <div class="container text-center my-5">
+        <div class="animated-title d-flex justify-content-center align-items-center gap-2">
+          <span class="left-part">Análise e</span>
+          <span class="center-dot">Desenvolvimento</span>
+          <span class="right-part">de Sistemas</span>
+        </div>
+      </div>
+
+      <!-- Tech Icons -->
+      <div class="tech-icons text-center mt-3">
+        <i class="fab fa-html5 text-danger fa-2x mx-2"></i>
+        <i class="fab fa-css3-alt text-primary fa-2x mx-2"></i>
+        <i class="fab fa-js text-warning fa-2x mx-2"></i>
+        <i class="fab fa-bootstrap text-info fa-2x mx-2"></i>
+        <i class="fab fa-python text-success fa-2x mx-2"></i>
+        <i class="fab fa-microsoft fa-2x mx-2" style="color:#0078D7"></i>
+      </div>
+    </div>
+  </section>
+
+
+
+
+ 
+
+<!-- Sobre Mim -->
+<div id="about" class="section wb">
+  <div class="container">
+<!--  -->    <div class="row">
+      <!-- Coluna esquerda: Sobre Mim -->
+      <div class="col-md-6">
+        <div class="message-box">
+          <h2><i class="fas fa-user"></i> Sobre Mim</h2>
+          
+          <!-- Resumo inicial -->
+          <p id="about-summary">
+            Olá! Meu nome é <strong>Daniel Pereira da Silva</strong> e sou apaixonado por tecnologia.  
+            Atualmente, estudo na <strong>Faculdade Impacta</strong> O curso <strong>Análise e Desenvolvimento de Sistemas</strong> na Impacta, com foco em <strong>Fullstack</strong>.  
+            Minha missão é criar <strong>soluções digitais inteligentes</strong> e explorar novas tecnologias nas áreas de <strong>Cibersegurança, Nuvem e Desenvolvimento Fullstack</strong>.
+          </p>
+
+          <!-- Texto completo escondido via checkbox -->
+          <input type="checkbox" id="read-more-toggle" style="display:none;">
+          <p id="about-full">
+            Ao longo da minha trajetória, já estudei e continuo me aprofundando em:  
+            <strong>HTML5, CSS3, JavaScript, Bootstrap, Python, SQL, ASP.NET MVC, Microsoft Azure</strong>, além de <strong>Segurança da Informação</strong> e <strong>Engenharia de Prompting</strong>.  
+            <br><br>
+            Meu foco é unir essas três áreas: <strong>Cibersegurança</strong> para proteger sistemas e dados, <strong>Nuvem</strong> para criar aplicações escaláveis e seguras, e <strong>Desenvolvimento Fullstack</strong> para construir soluções digitais eficientes e inovadoras.  
+            <br><br>
+            Sou movido pela curiosidade e vontade de impactar o mundo com tecnologia, sempre explorando novas ferramentas e projetos que desafiam minha criatividade.  
+            Busco transformar teoria em prática, aplicando conhecimentos em projetos pessoais e colaborativos para aprimorar habilidades e gerar resultados reais.
+          </p>
+
+          <!-- Botão Leia mais via label -->
+          <label for="read-more-toggle" class="btn btn-outline-primary mt-2" id="read-more-btn">Leia mais</label>
+
+          <br>
+          <a href="https://docs.google.com/document/d/1p9P1iAJMbjKZsUDxgb9LY2cM-sYxrgZAS0TTHNXwUOU/edit?usp=sharing"
+             target="_blank" class="btn btn-primary mt-2">Download CV</a>
+        </div>
+      </div>
+
+      <!-- Coluna direita: Foto com efeito de giro via CSS -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="right-box-pro text-center">
+          <div class="profile-img-container">
+            <img id="profile-img" src="uploads/fotoperfil.png" alt="Daniel Pereira da Silva" class="img-fluid img-rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  /* Texto completo oculto inicialmente */
+  #about-full {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  /* Quando checkbox estiver marcado, mostra o texto completo */
+  #read-more-toggle:checked ~ #about-full {
+    max-height: 500px; /* ajusta conforme o tamanho do texto */
+  }
+
+  /* Foto com efeito de giro ao clicar */
+  .profile-img-container {
+    perspective: 1000px;
+  }
+
+  #profile-img {
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  #profile-img:active {
+    transform: rotateY(360deg) scale(1.05);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+  }
+
+  #profile-img:hover {
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 767px) {
+    #about-summary, #about-full {
+      font-size: 14px;
+    }
+    #profile-img {
+      max-width: 200px;
+    }
+  }
+</style>
+
+
+<script>
+  // Botão Leia mais / Leia menos
+  const readMoreBtn = document.getElementById('read-more-btn');
+  const aboutFull = document.getElementById('about-full');
+
+  readMoreBtn.addEventListener('click', () => {
+    if (aboutFull.style.display === 'none') {
+      aboutFull.style.display = 'block';
+      readMoreBtn.textContent = 'Leia menos';
+    } else {
+      aboutFull.style.display = 'none';
+      readMoreBtn.textContent = 'Leia mais';
+    }
+  });
+
+  // Foto interativa: clique gira e hover adiciona sombra
+  const img = document.getElementById('profile-img');
+  let rotated = false;
+
+  img.addEventListener('click', () => {
+    rotated = !rotated;
+    img.style.transform = rotated ? 'rotateY(360deg) scale(1.05)' : 'rotateY(0deg) scale(1)';
+  });
+
+  img.addEventListener('mouseover', () => {
+    img.style.boxShadow = '0 20px 30px rgba(0,0,0,0.5)';
+  });
+
+  img.addEventListener('mouseout', () => {
+    img.style.boxShadow = 'none';
+  });
+</script>
+
+
+
+ 
+
+
+
+  <!-- HABILIDADES -->
+  <div id="services" class="section wb">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Habilidades</h2>
+        <p>Minhas principais competências tecnológicas</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-html5 fa-3x text-danger mb-3"></i>
+            <h4>HTML</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-css3-alt fa-3x text-primary mb-3"></i>
+            <h4>CSS</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-bootstrap fa-3x text-info mb-3"></i>
+            <h4>Bootstrap</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="services-inner-box">
+            <i class="fab fa-python fa-3x text-success mb-3"></i>
+            <h4>Python</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fas fa-database fa-3x text-warning mb-3"></i>
+            <h4>SQL</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fab fa-microsoft fa-3x text-primary mb-3"></i>
+            <h4>Microsoft Azure</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+            <h4>Segurança da Informação</h4>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="services-inner-box">
+            <i class="fas fa-robot fa-3x text-secondary mb-3"></i>
+            <h4>Engenharia de Prompting</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projetos com Dashboard -->
+  <div id="portfolio" class="section lb">
+    <div class="container">
+      <div class="section-title text-left">
+        <h3><i class="fas fa-folder-open"></i> Projetos & Dashboard</h3>
+        <p>Projetos interativos com métricas animadas</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h5>Front-end</h5>
+            <canvas id="chart1" class="chart-container"></canvas>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h5>Back-end</h5>
+            <canvas id="chart2" class="chart-container"></canvas>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h5>DevOps & Azure</h5>
+            <canvas id="chart3" class="chart-container"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projetos & Dashboard -->
+<!-- DASHBOARD -->
+<section id="dashboard" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">📊 Dashboard</h2>
+    <p class="text-center mb-5">Visualize alguns dados e métricas interativas:</p>
+
+    <div class="row">
+      <!-- Gráfico de Habilidades -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm p-3">
+          <h5 class="text-center">Habilidades</h5>
+          <canvas id="skillsChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico de Projetos -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm p-3">
+          <h5 class="text-center">Projetos Finalizados</h5>
+          <canvas id="projectsChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  // Gráfico de Habilidades
+  const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+  new Chart(skillsCtx, {
+    type: 'radar',
+    data: {
+      labels: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Python', 'Azure'],
+      datasets: [{
+        label: 'Nível de Conhecimento',
+        data: [90, 85, 70, 80, 75, 60],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgb(54, 162, 235)',
+        pointBackgroundColor: 'rgb(54, 162, 235)'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          suggestedMin: 0,
+          suggestedMax: 100
+        }
+      }
+    }
+  });
+
+  // Gráfico de Projetos
+  const projectsCtx = document.getElementById('projectsChart').getContext('2d');
+  new Chart(projectsCtx, {
+    type: 'bar',
+    data: {
+      labels: ['2021', '2022', '2023', '2024', '2025'],
+      datasets: [{
+        label: 'Projetos Concluídos',
+        data: [5, 12, 18, 25, 10],
+        backgroundColor: 'rgba(255, 99, 132, 0.6)'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+</script>
+
+
+      <div class="row mt-3">
+        <div class="col-md-12 text-center">
+          <div class="legend">
+            <span><i class="fas fa-square" style="color:red"></i> HTML</span>
+            <span><i class="fas fa-square" style="color:blue"></i> CSS</span>
+            <span><i class="fas fa-square" style="color:yellow"></i> JavaScript</span>
+            <span><i class="fas fa-square" style="color:purple"></i> Bootstrap</span>
+            <span><i class="fas fa-square" style="color:green"></i> Python</span>
+            <span><i class="fas fa-square" style="color:orange"></i> SQL</span>
+            <span><i class="fas fa-square" style="color:cyan"></i> Azure</span>
+            <span><i class="fas fa-square" style="color:pink"></i> Segurança</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Footer Redes Sociais -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+      <h4>Conecte-se Comigo</h4>
+      <a href="https://www.instagram.com/dael_p1reira/" target="_blank"><i class="fab fa-instagram fa-2x mx-2" style="color:#E4405F;"></i></a>
+      <a href="https://wa.me/11980311529" target="_blank"><i class="fab fa-whatsapp fa-2x mx-2" style="color:#25D366;"></i></a>
+      <a href="https://github.com/danielps98" target="_blank"><i class="fab fa-github fa-2x mx-2" style="color:#fff;"></i></a>
+      <p class="mt-3">&copy; 2024 Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- PARTICLES JS -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 50 },
+        "size": { "value": 4 },
+        "move": { "speed": 2 },
+        "line_linked": { "enable": true }
+      }
+    });
+  </script>
+
+  <!-- CHARTS JS -->
+  <script>
+    const chart1 = new Chart(document.getElementById('chart1'), {
+      type: 'doughnut',
+      data: {
+        labels: ['HTML', 'CSS', 'JS'],
+        datasets: [{
+          label: 'Front-end',
+          data: [85, 80, 75],
+          backgroundColor: ['#DD4B25', '#2965F1', '#F0DB4F']
+        }]
+      },
+      options: { animation: { animateScale: true } }
+    });
+
+    const chart2 = new Chart(document.getElementById('chart2'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Python', 'ASP.NET MVC', 'SQL'],
+        datasets: [{
+          label: 'Back-end',
+          data: [80, 70, 75],
+          backgroundColor: ['#306998', '#68217A', '#F7931A']
+        }]
+      },
+      options: { animation: { animateScale: true } }
+    });
+
+    const chart3 = new Chart(document.getElementById('chart3'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Azure', 'DevOps', 'Segurança'],
+        datasets: [{
+          label: 'DevOps & Azure',
+          data: [70, 60, 65],
+          backgroundColor: ['#0078D7', '#FFB900', '#E81123']
+        }]
+      },
+      options: { animation: { animateScale: true } }
+    });
+  </script>
+
+</body>
+</html>
